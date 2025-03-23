@@ -2,8 +2,18 @@
 {
     static void Main(string[] args)
     {
-        SayaTubeVideo video = new SayaTubeVideo("Tutorial Design By Contract – [Muhammad Iqbal Al Khaththath]");
-        video.IncreasePlayCount(100);
-        video.PrintVideoDetails();
+        try
+        {
+            SayaTubeVideo video = new SayaTubeVideo("Tutorial Design By Contract – [NAMA_PRAKTIKAN]");
+            for (int i = 0; i < 1000; i++)
+            {
+                video.IncreasePlayCount(1000000);
+            }
+            video.PrintVideoDetails();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }

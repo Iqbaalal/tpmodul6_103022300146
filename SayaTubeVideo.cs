@@ -8,6 +8,11 @@ public class SayaTubeVideo
 
     public SayaTubeVideo(string title)
     {
+        if (string.IsNullOrEmpty(title) || title.Length > 100)
+        {
+            throw new ArgumentException("Judul video tidak valid.");
+        }
+
         Random random = new Random();
         this.id = random.Next(10000, 99999);
         this.title = title;
@@ -16,7 +21,22 @@ public class SayaTubeVideo
 
     public void IncreasePlayCount(int count)
     {
-        playCount += count;
+        if (count > 10000000)
+        {
+            throw new ArgumentException("Penambahan play count melebihi batas.");
+        }
+
+        try
+        {
+            checked
+            {
+                playCount += count;
+            }
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Overflow terjadi pada penambahan play count.");
+        }
     }
 
     public void PrintVideoDetails()
