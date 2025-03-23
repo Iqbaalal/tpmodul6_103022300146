@@ -4,7 +4,7 @@
     {
         try
         {
-            SayaTubeVideo video = new SayaTubeVideo("Tutorial Design By Contract – [NAMA_PRAKTIKAN]");
+            SayaTubeVideo video = new SayaTubeVideo("Tutorial Design By Contract – [Muhammad Iqbal Al Khaththath]");
             for (int i = 0; i < 1000; i++)
             {
                 video.IncreasePlayCount(1000000);
